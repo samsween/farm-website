@@ -20,9 +20,9 @@ export default async function Layout({ children }: { children: React.ReactNode }
 
 
     <div className="flex">
-      <aside className="inset-y fixed  top-0 left-0 z-20 flex  min-w-36 flex-col border-primary">
-        <nav className="py-8 px-4 flex flex-col gap-8 pt-24">
-          <div className="flex gap-2 items-center">
+      <aside className="inset-y fixed  top-0 left-0 z-20 flex  min-w-36 flex-col border-primary border-r min-h-screen">
+        <nav className="py-8 flex flex-col gap-8 pt-16">
+          <div className="flex p-4 text-slate-50 gap-2 items-center bg-primary w-full">
             <Image />
 
             <Link href="/gallery" className="font-semibold">Gallery</Link>

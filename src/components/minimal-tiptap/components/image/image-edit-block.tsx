@@ -34,6 +34,7 @@ const ImageEditBlock = ({ editor, className, close, ...props }: ImageEditBlockPr
     const reader = new FileReader()
     reader.onload = e => {
       const base64encodedString = e.target?.result as string
+      console.log("FILE")
       filesCtx.setFiles(prev => [...prev, { file: base64encodedString, name: files[0].name }])
       editor.chain().setImage({ title: files[0].name, src: base64encodedString }).focus().run()
     }

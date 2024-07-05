@@ -1,23 +1,12 @@
 
 import Link from "next/link"
 import {
-	CircleUser,
 	Menu,
 	Package2,
-	Search,
 } from "lucide-react"
-
 import { Button } from "@/components/ui/button"
-import {
-	DropdownMenu,
-	DropdownMenuContent,
-	DropdownMenuItem,
-	DropdownMenuLabel,
-	DropdownMenuSeparator,
-	DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
-import { Input } from "@/components/ui/input"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import UserSwitcher from "./user-switcher"
 
 export function Layout({ children }: { children: React.ReactNode }) {
 	return (
@@ -46,13 +35,25 @@ export function Layout({ children }: { children: React.ReactNode }) {
 						href="#"
 						className="flex items-center gap-2 text-lg  md:text-base"
 					>
-						Calander
+						Calendar
 					</Link>
 					<Link
-						href="/cows"
+						href="/cattle"
 						className="flex items-center gap-2 text-lg  md:text-base"
 					>
-						Cows
+						Cattle
+					</Link>
+					<Link
+						href="/finance"
+						className="flex items-center gap-2 text-lg  md:text-base"
+					>
+						Finance
+					</Link>
+					<Link
+						href="/content/notes"
+						className="flex items-center gap-2 text-lg  md:text-base text-nowrap"
+					>
+						Simon Says
 					</Link>
 				</nav>
 				<Sheet>
@@ -105,33 +106,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
 						</nav>
 					</SheetContent>
 				</Sheet>
-				<div className="flex w-full items-center gap-4 md:ml-auto md:gap-2 lg:gap-4">
-					<form className="ml-auto flex-1 sm:flex-initial">
-						<div className="relative">
-							<Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
-							<Input
-								type="search"
-								placeholder="Search images..."
-								className="pl-8 sm:w-[300px] md:w-[200px] lg:w-[300px]"
-							/>
-						</div>
-					</form>
-					<DropdownMenu>
-						<DropdownMenuTrigger asChild>
-							<Button variant="secondary" size="icon" className="rounded-full">
-								<CircleUser className="h-5 w-5" />
-								<span className="sr-only">Toggle user menu</span>
-							</Button>
-						</DropdownMenuTrigger>
-						<DropdownMenuContent align="end">
-							<DropdownMenuLabel>My Account</DropdownMenuLabel>
-							<DropdownMenuSeparator />
-							<DropdownMenuItem>Settings</DropdownMenuItem>
-							<DropdownMenuItem>Support</DropdownMenuItem>
-							<DropdownMenuSeparator />
-							<DropdownMenuItem>Logout</DropdownMenuItem>
-						</DropdownMenuContent>
-					</DropdownMenu>
+				<div className="flex w-full items-center justify-end gap-4 md:ml-auto md:gap-2 lg:gap-4">
+					<UserSwitcher />
 				</div>
 			</header>
 			<main className="flex flex-1">

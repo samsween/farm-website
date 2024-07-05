@@ -4,8 +4,7 @@ import { FileProvider } from "@/context/file-provider";
 
 export default function Home() {
   return (
-    <FileProvider>
-      <Editor />
-    </FileProvider>
+    <>
+    </>
   );
 }
