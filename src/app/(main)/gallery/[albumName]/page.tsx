@@ -1,5 +1,5 @@
 import cloudinary from "@/lib/cloudinary";
-import { SearchResult } from "@/app/gallery/page";
+import { SearchResult } from "@/app/(main)/gallery/page";
 import { ImageGalery } from "../image-gallery";
 
 export default async function GalleryPage({
@@ -18,13 +18,11 @@ export default async function GalleryPage({
 
   return (
     <section>
-
       <div className="flex flex-col gap-8">
         <div className="flex justify-between">
           <h1 className="text-4xl font-bold">Album {albumName}</h1>
         </div>
         <ImageGalery images={results.resources} />
-
       </div>
     </section>
   );

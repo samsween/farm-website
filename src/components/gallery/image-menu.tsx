@@ -6,7 +6,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { AddToAlbumDialog } from "./add-to-albumn-dialog";
-import { SearchResult } from "@/app/gallery/page";
+import { SearchResult } from "@/app/(main)/gallery/page";
 import { useState } from "react";
 import Link from "next/link";
 import { Menu, Pencil } from "lucide-react";

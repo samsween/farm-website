@@ -1,4 +1,4 @@
-import { SearchResult } from "@/app/gallery/page";
+import { SearchResult } from "@/app/(main)/gallery/page";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
